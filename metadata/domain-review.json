@@ -1,0 +1,73 @@
+{
+  "repo": "harbor-parse-dsl-stack",
+  "language": "Ruby",
+  "category": "Parsers",
+  "goal": "Implement a Ruby parsers project for dsl constraint solving, using bounded scenario files and conflict explanations.",
+  "review_model": {
+    "terms": [
+      "token drift",
+      "grammar width",
+      "label quality",
+      "error locality"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "token drift",
+      "signal": 58,
+      "slack": 46,
+      "drag": 9,
+      "confidence": 80,
+      "score": 215,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "grammar width",
+      "signal": 60,
+      "slack": 32,
+      "drag": 28,
+      "confidence": 91,
+      "score": 159,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "label quality",
+      "signal": 68,
+      "slack": 47,
+      "drag": 32,
+      "confidence": 69,
+      "score": 156,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "error locality",
+      "signal": 82,
+      "slack": 23,
+      "drag": 11,
+      "confidence": 76,
+      "score": 230,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "token drift",
+      "signal": 92,
+      "slack": 39,
+      "drag": 22,
+      "confidence": 52,
+      "score": 209,
+      "lane": "ship"
+    }
+  ]
+}
